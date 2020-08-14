@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import {useForm} from 'react-hook-form'
 import { v4 as uuid } from 'uuid'
+import {makePost} from '../actions/smurfActions'
+import {connect} from 'react-redux'
 
 
 const StyledForm = styled.form`
@@ -21,7 +23,7 @@ const SmurfForm = (props) => {
             height: data.height,
             id: uuid()
         }
-        console.log(newObj)
+        props.makePost(newObj)
     }
 
     return (
@@ -55,4 +57,4 @@ const SmurfForm = (props) => {
 }
 
 
-export default SmurfForm;
+export default connect(null,{makePost})(SmurfForm);

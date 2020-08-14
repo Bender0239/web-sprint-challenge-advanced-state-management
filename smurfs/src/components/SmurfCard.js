@@ -20,7 +20,7 @@ const SmurfCard = (props) => {
         <StyledSmurf>
             {props.data.map(smurf => {
                 return (
-                    <div>
+                    <div key={smurf.id}>
                         <div>{smurf.name}</div>
                         <div>{smurf.age}</div>
                         <div>{smurf.height}</div>
